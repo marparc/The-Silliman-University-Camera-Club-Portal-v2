@@ -1,8 +1,7 @@
+// app/layout.tsx
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "@/components/molecules/navbar";
-import { Footer } from "@/components/molecules/footer";
 import { NavigationProgress } from "@/components/molecules/navigation-progress";
 import { Suspense } from "react";
 
@@ -31,13 +30,11 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className={`${geistSans.className} min-h-full flex flex-col`}>
+      <body className={`${geistSans.className} h-full`}>
         <Suspense fallback={null}>
           <NavigationProgress />
         </Suspense>
-        <Navbar />
         {children}
-        <Footer />
       </body>
     </html>
   );
